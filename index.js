@@ -1,4 +1,4 @@
-const babel = require("@babel/core");
+const babel = require('@babel/core');
 
 module.exports = () => ({
 	visitor: {
@@ -8,12 +8,12 @@ module.exports = () => ({
 				const file = state.file || {};
 
 				if (!opts || !opts.prepend) {
-					throw new Error("The prepend option is missing");
-                }
+					throw new Error('The prepend option is missing');
+				}
 
-                if (typeof opts.accept !== 'undefined' && typeof opts.accept !== 'function') {
-                    throw new Error("The accept option must be a function");
-                }
+				if (typeof opts.accept !== 'undefined' && typeof opts.accept !== 'function') {
+					throw new Error('The accept option must be a function');
+				}
 
 				if (opts.accept && !opts.accept(file.opts.filename)) {
 					return;
@@ -22,23 +22,17 @@ module.exports = () => ({
 				let parsed = null;
 
 				try {
-					parsed = babel.parse(opts.prepend, { filename: "" });
+					parsed = babel.parse(opts.prepend, { filename: '' });
 				} catch (e) {
-					throw new Error(
-						"Error parsing prepend value: " + opts.prepend
-					);
+					throw new Error('Error parsing prepend value: ' + opts.prepend);
 				}
 
 				if (!parsed || !parsed.program || !parsed.program.body) {
-					throw new Error(
-						"Error parsing prepend value: " + opts.prepend
-					);
+					throw new Error('Error parsing prepend value: ' + opts.prepend);
 				}
 
- 				if (parsed.program.body.length > 1) {
-					throw new Error(
-						"The prepend value must contain one single statement"
-					);
+				if (parsed.program.body.length > 1) {
+					throw new Error('The prepend value must contain one single statement');
 				}
 
 				path.node.body.unshift(parsed.program.body[0]);
