@@ -16,12 +16,12 @@ npm i babel-plugin-prepend --D
 
 The plugin accepts 2 options:
 
-prepend: mandatory option that needs to contain the statement to be appended during transformation
-accept: a filter function to accept or deny transformation on files based on the file name
+* prepend: mandatory option that needs to contain the statement to be appended during transformation
+* accept: a filter function to accept or deny transformation on files based on the file name
 
-The prepend option needs to contain 1 single statement.
+The prepend option needs to contain **1 single statement**.
 
-If the 'accept' option is not needed, the plugin can be added to .babelrc as follows:
+If the accept option is not needed, the plugin can be added to .babelrc as follows:
 
 ```json
 {
