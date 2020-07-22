@@ -1,4 +1,4 @@
-# babel-plugin-prepend
+# babel-plugin-prepend [![Build Status](https://travis-ci.org/marcospont/babel-plugin-prepend.svg?branch=master)](https://travis-ci.org/marcospont/babel-plugin-prepend)
 
 > Babel plugin that allows a statement to be prepended on files during the transformation.
 
@@ -16,7 +16,7 @@ npm i babel-plugin-prepend --D
 
 The plugin accepts 2 options:
 
-* prepend: mandatory option that needs to contain the statement to be appended during transformation
+* prepend: mandatory option that needs to contain the statement to be prepended during transformation
 * accept: a filter function to accept or deny transformation on files based on the file name
 
 The prepend option needs to contain **1 single statement**.
