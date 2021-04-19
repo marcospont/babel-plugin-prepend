@@ -2,7 +2,6 @@
 
 > Babel plugin that allows a statement to be prepended on files during the transformation.
 
-
 ## Install
 
 With [npm](https://npmjs.org/package/babel-plugin-prepend) do:
@@ -11,13 +10,12 @@ With [npm](https://npmjs.org/package/babel-plugin-prepend) do:
 npm i babel-plugin-prepend --D
 ```
 
-
 ## Usage
 
 The plugin accepts 2 options:
 
-* prepend: mandatory option that needs to contain the statement to be prepended during transformation
-* accept: a filter function to accept or deny transformation on files based on the file name
+-   prepend: mandatory option that needs to contain the statement to be prepended during transformation
+-   accept: a filter function to accept or deny transformation on files based on the file name
 
 The prepend option needs to contain **1 single statement**.
 
@@ -25,14 +23,14 @@ If the accept option is not needed, the plugin can be added to .babelrc as follo
 
 ```json
 {
-  "plugins": [
-    [
-      "prepend",
-      {
-        "prepend": "var a = 1;"
-      }
-    ]
-  ]
+	"plugins": [
+		[
+			"prepend",
+			{
+				"prepend": "var a = 1;"
+			}
+		]
+	]
 }
 ```
 
@@ -40,20 +38,19 @@ If the 'accept' option is needed, then the plugin needs to be added to babel.con
 
 ```js
 {
-  plugins: [
-    [
-      prepend,
-      {
-        prepend: 'var a = 1;',
-        accept: function(filename) {
-          return true;
-        }
-      }
-    ]
-  ]
+	plugins: [
+		[
+			prepend,
+			{
+				prepend: 'var a = 1;',
+				accept: function (filename) {
+					return true;
+				}
+			}
+		]
+	];
 }
 ```
-
 
 ## Example
 
@@ -70,11 +67,9 @@ var a = 1;
 var b = 2;
 ```
 
-
 ## Contributing
 
 Feel free to submit pull requests. When adding anything new, please remember to update the tests file.
-
 
 ## License
 
